@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background:#a2f2de;font-family:sans-serif}
+    div{text-align:center;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.1)}
+    button{margin:10px;padding:15px 25px;font-size:18px;border:none;border-radius:5px;cursor:pointer;background-color:#007BFF;color:white;transition:0.3s}
+    button:hover{background-color:#0056b3}
+    .result{margin-top:20px;font-size:18px;font-weight:bold;color:#333}
+  </style>
+</head>
+<body>
+  <div>
+    <button onclick="p('rock')">Rock</button>
+    <button onclick="p('paper')">Paper</button>
+    <button onclick="p('scissors')">Scissors</button>
+    <div class="result" id="result"></div>
+  </div>
+  <script>
+    function p(u){const c=['rock','paper','scissors'],r=c[Math.floor(Math.random()*3)],t=u==r?'tie':(u=='rock'&&r=='scissors'||u=='paper'&&r=='rock'||u=='scissors'&&r=='paper')?'win':'lose';document.getElementById('result').innerHTML=`You chose ${u}. Computer chose ${r}. You ${t}!`}
+  </script>
+</body>
+</html>
